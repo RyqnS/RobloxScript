@@ -50,12 +50,31 @@ On the off-chance someone wants to try this, here's how:
 
 ### Prerequisites
 
-The user would need python3, pytesseract, and pyautogui installed.
+Software: The user would need python3, pytesseract, and pyautogui installed. 
+In-Game: Confirm that doodle followers are off and graphics are turned to minimum.
 
-### Getting Started
+### Modifications
 
-To get a local copy up and running follow these simple steps:
+To make this bot work, you may need to do some editting of the following hard-coded pixel values I included to "avoid other player blocking NPC" issue:
+event.py
+- (721,474) is roughly the center of my screen
+- (440,350) clicks the first task
+- (1175,320) is where the yes button appears when you click the quest board
+- (1175,390) is where the no button appears when you click the quest board
+- the screenshot regions in get_tasks() correspond to the quest titles when the quest board is open
+- the screenshot region (200,100,1000,130) is xleft, ytop, width, height and should be the entire black text box when you click accept quest except the little right pointing arrow in the bottom right
+- wantsDict has a mapping of each topping to its placement on my screen when doing the making_pizza task
+- (750, 800) is the "finish pizza" button in the making_pizza task
+- there are two while loops with (420 +/i x*i, 480 +/i x*i). This is the location of the chef in the pizza_delivery task when you accept it and navigate in front of him.
 
+Almost there!
+
+Util/moveInstructions.py
+- (766,777) is the reset_char button when you hit escape
+- (658,428) is the followup confirmation button
+- There is one while loop in reset_camera() that has 760 and 480. Replace these with the coordinates to the middle of your character's head after you press q once after loading in.
+
+### Running
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

@@ -40,10 +40,10 @@ def do_task():
         pygui.click(440,350)
         while not yes_no():
             if yes_no(): break
-        pygui.click(1175,320)
+        pygui.click(1170,320)
         time.sleep(1)
         while not task_done():
-            pygui.click(1175,320)
+            pygui.click(1170,320)
             if task_done(): break
 
         #give up quest
@@ -51,22 +51,22 @@ def do_task():
         outList = get_tasks()
 
     if "Making Pizza\n" in outList:
-        pygui.click(425,425) 
+        pygui.click(440,350) 
         time.sleep(1.25) #do u want to accept this quest?
-        pygui.click(1175,320)
+        pygui.click(1170,320)
         time.sleep(1.25)
-        pygui.click(1175,320)
+        pygui.click(1170,320)
         time.sleep(.1)
-        pygui.click(1175,320)
+        pygui.click(1170,320)
         time.sleep(0.5)
         make_pizza()
 
     elif "Pizza Deliverv\n" in outList:
-        pygui.click(425,425)
+        pygui.click(440,350)
         time.sleep(1)
-        pygui.click(1175,320)
+        pygui.click(1170,320)
         time.sleep(1)
-        pygui.click(1175,320)
+        pygui.click(1170,320)
         time.sleep(1)
         pizza_delivery()  
 
@@ -279,57 +279,57 @@ def pizza_delivery(): #assumes in front of board
     pygui.keyUp("fn")
 
 
-def package_delivery(num): #assumes in front of board
-    reset_char()
-    time.sleep(1.5)
-    navigate_to_house(num)
-    i = 0
-    while True:
-        if house_clicked():
-            break
-        else:
-            pygui.click(760+10*i,375)
-            if house_clicked(): break
-            pygui.click(760-10*i,375)
-            if house_clicked(): break
-            pygui.click(760+10*i,375+20*i)
-            if house_clicked(): break
-            pygui.click(760-10*i,375-20*i)
-            if house_clicked(): break
-            i+=1
-    time.sleep(2)
-    im1 = pygui.screenshot(region=(200,100,1000,130))
-    text1 = pytesseract.image_to_string(im1).lstrip()
-    x = re.findall(r'\d+', text1)
-    houseNum = int(x[-1])
-    pygui.click(1170,390)
-    time.sleep(2)
-    pygui.click(1170,390)
-    time.sleep(1)
-    reset_camera()
-    time.sleep(1.5)
-    navigate_to_house(houseNum)
-    i=0
-    while True:
-        if house_clicked():
-            break
-        else:
-            pygui.click(760+10*i,375)
-            if house_clicked(): break
-            pygui.click(760-10*i,375)
-            if house_clicked(): break
-            pygui.click(760+10*i,375+20*i)
-            if house_clicked(): break
-            pygui.click(760-10*i,375-20*i)
-            if house_clicked(): break
-            i+=1
-    time.sleep(2)
-    pygui.click(1170,390)
-    time.sleep(2)
-    pygui.click(1170,390)
-    time.sleep(1)
-    pygui.click(1170,390)
-    time.sleep(0.5)
+# def package_delivery(num): #assumes in front of board
+#     reset_char()
+#     time.sleep(1.5)
+#     navigate_to_house(num)
+#     i = 0
+#     while True:
+#         if house_clicked():
+#             break
+#         else:
+#             pygui.click(760+10*i,375)
+#             if house_clicked(): break
+#             pygui.click(760-10*i,375)
+#             if house_clicked(): break
+#             pygui.click(760+10*i,375+20*i)
+#             if house_clicked(): break
+#             pygui.click(760-10*i,375-20*i)
+#             if house_clicked(): break
+#             i+=1
+#     time.sleep(2)
+#     im1 = pygui.screenshot(region=(200,100,1000,130))
+#     text1 = pytesseract.image_to_string(im1).lstrip()
+#     x = re.findall(r'\d+', text1)
+#     houseNum = int(x[-1])
+#     pygui.click(1170,390)
+#     time.sleep(2)
+#     pygui.click(1170,390)
+#     time.sleep(1)
+#     reset_camera()
+#     time.sleep(1.5)
+#     navigate_to_house(houseNum)
+#     i=0
+#     while True:
+#         if house_clicked():
+#             break
+#         else:
+#             pygui.click(760+10*i,375)
+#             if house_clicked(): break
+#             pygui.click(760-10*i,375)
+#             if house_clicked(): break
+#             pygui.click(760+10*i,375+20*i)
+#             if house_clicked(): break
+#             pygui.click(760-10*i,375-20*i)
+#             if house_clicked(): break
+#             i+=1
+#     time.sleep(2)
+#     pygui.click(1170,390)
+#     time.sleep(2)
+#     pygui.click(1170,390)
+#     time.sleep(1)
+#     pygui.click(1170,390)
+#     time.sleep(0.5)
 
 if __name__ == "__main__":
     time.sleep(3)

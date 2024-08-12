@@ -60,6 +60,7 @@ In-Game: Confirm that doodle followers are off and graphics are turned to minimu
 If you have a 2021 Macbook 14-inch you're in luck and can ignore this modifications section. Not a big screen-size pixel person but the stats are 3024 x 1964 px at 254 ppi, and when I drag my mouse to screenshot the accessible pixels on my screen are from 1512 to 981.
 
 To make this bot work, you may need to do some editting of the following hard-coded pixel values I included to "avoid other player blocking NPC" issue:
+
 event.py
 - (721,474) is roughly the center of my screen
 - (440,350) clicks the first task

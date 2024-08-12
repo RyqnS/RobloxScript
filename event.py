@@ -3,8 +3,9 @@ import time
 from PIL import Image 
 from pytesseract import pytesseract 
 import re
-from checkers import *
-from moveInstructions import *
+from Util.checkers import *
+from Util.moveInstructions import *
+
 
 #join event world, zoom out, and press Q. setup
 

@@ -1,4 +1,5 @@
 import pyautogui as pygui
+from checkers import *
 import time
 
 

@@ -137,7 +137,7 @@ def reset_camera():
     pygui.keyDown("left")
     while True:
         try:
-            button7location = pygui.locateOnScreen('resetter.png',confidence = .55)
+            button7location = pygui.locateOnScreen('./Images/resetter.png',confidence = .55)
         except:
             continue
         else:
@@ -167,7 +167,7 @@ def reset_camera():
     time.sleep(0.5)
     while True:
         try:
-            button11location = pygui.locateCenterOnScreen('taskDone.png',confidence = .5)
+            button11location = pygui.locateCenterOnScreen('./Images/taskDone.png',confidence = .5)
             break
         except:
             pygui.click(1170,390)

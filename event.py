@@ -102,7 +102,7 @@ def make_pizza(): #assumes in front of board
     time.sleep(1)
     while True:
         try:
-            button11location = pygui.locateCenterOnScreen('enteredPizzaria.png',confidence = .5)
+            button11location = pygui.locateCenterOnScreen('./Images/enteredPizzaria.png',confidence = .5)
             break
         except:
             continue
@@ -176,7 +176,7 @@ def make_pizza(): #assumes in front of board
     time.sleep(1)
     while True:
         try:
-            button11location = pygui.locateCenterOnScreen('leftPizzaria.png',confidence = .2)
+            button11location = pygui.locateCenterOnScreen('./Images/leftPizzaria.png',confidence = .2)
             break
         except:
             continue

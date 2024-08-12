@@ -9,9 +9,10 @@
       </ul>
     </li>
     <li>
+      <a href="#about-the-project">Usage</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#installation">Prerequisites</a></li>
+        <li><a href="#prerequisites">Getting Started</a></li>
       </ul>
     </li>
   </ol>
@@ -37,17 +38,16 @@ Just python
 
 
 
-<!-- GETTING STARTED -->
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+<!-- Usage -->
 
 ### Prerequisites
 
 The user would need python3, pytesseract, and pyautogui installed
 
-## Usage
+## Getting Started
+
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
 
 
 

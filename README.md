@@ -15,6 +15,9 @@
         <li><a href="#prerequisites">Getting Started</a></li>
       </ul>
     </li>
+    <li>
+      <a href="#about-the-project">Some Complexities</a>
+    </li>
   </ol>
 </details>
 
@@ -42,7 +45,6 @@ Just Python3
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
 <!-- USAGE -->
 ## Usage
 
@@ -51,9 +53,11 @@ On the off-chance someone wants to try this, here's how:
 ### Prerequisites
 
 Software: The user would need python3, pytesseract, and pyautogui installed. 
-In-Game: Confirm that doodle followers are off and graphics are turned to minimum.
+In-Game: Confirm that doodle followers are off and graphics are turned to minimum. Ensure that you have a mount that is accessible by pressing q.
 
 ### Modifications
+
+If you have a 2021 Macbook 14-inch you're in luck and can ignore this modifications section. Not a big screen-size pixel person but the stats are 3024 x 1964 px at 254 ppi, and when I drag my mouse to screenshot the accessible pixels on my screen are from 1512 to 981.
 
 To make this bot work, you may need to do some editting of the following hard-coded pixel values I included to "avoid other player blocking NPC" issue:
 event.py
@@ -74,8 +78,12 @@ Util/moveInstructions.py
 - (658,428) is the followup confirmation button
 - There is one while loop in reset_camera() that has 760 and 480. Replace these with the coordinates to the middle of your character's head after you press q once after loading in.
 
-### Running
+### Execution
 
+You can get this bot running after modifications by doing the following steps:
+1) Load into the event server and press q once. Do not move your character or pan your camera. If you have, reload into the event server and press q to engage your mount.
+2) Run event.py and return to roblox within 3 seconds of running it
+3) Hope it doesn't break
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -93,5 +101,3 @@ A few things I ran into while implementing the bot.
 - Expectedly, a bot that doesn't violate Roblox's terms and conditions would need to rely on screen events instead of backend data to record different game states. Unfortuantely, when it comes to locating onScreeen events there is always the chance that some other player is in the way blocking whatever is being looked for. That said, there exist some hard-coded values mentioned previously that may need to be editted for other people's uses.
 
 - Fortunately, popups cannot be blocked by other people and are thus not hard-coded.
-
-

@@ -38,12 +38,21 @@ When setup correctly, the bot will:
 - Do said task
 - Reset the character's camera angle and position
 
+Three doable tasks:
+pizza_delivery()
+after accepting the task from the quest board, navigate to the chef outside the pizzaria, click around to find him, then click through and extract his text to determine which house to navigate to. Reset position and navigate to front of said house, then click around to try and find the door. Once the door is clicked the task is done. If the door does not open within a set amount of clicks the bot will assume it made a navigation mistake, reset the camera, and retry the latter half of the task starting from navigating to the house.
+
+make_pizza()
+after accepting the task from the quest board, the character will navigate to the pizzaria, walk to the chef, and click him on screen. It will then click through while extracting text about what the customer wants, then when prompted with the make pizza phase in game have a better memory than me and make the pizza perfectly almost every time.
+
+package_delivery()
+I commented out this one because it's too slow but it's there.
+
 ### Built With
 
 Just Python3
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- USAGE -->
 ## Usage

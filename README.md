@@ -29,16 +29,22 @@ This was a fun experience because I had played this game when I was younger and 
 
 The bot makes roughly 500 of said currency per hour which is decent (I think) to the average human rate, and does one of the two implementable tasks a lot better than I could.
 
+When setup correctly, the bot will
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 ### Built With
 
-Just python
+Just Python3
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 <!-- USAGE -->
+## Usage
+
+On the off-chance someone wants to try this, here's how:
 
 ### Prerequisites
 

@@ -1,5 +1,5 @@
 import pyautogui as pygui
-from checkers import *
+from Util.checkers import *
 import time
 
 
@@ -11,9 +11,19 @@ def reset_char():
     pygui.click(658,428)
 
 def go_to_board(): #assumes character at reset area
+    pygui.moveTo(721,474)
     pygui.keyDown("w")
-    time.sleep(3)
-    pygui.keyUp("w")
+    t_end = time.time() + 5
+    while not mouse_on_board():
+        continue
+    if time.time() > t_end:
+        pygui.keyUp("w")
+        time.sleep(0.1)
+        reset_camera()
+        time.sleep(0.3)
+        go_to_board()
+    else:
+        pygui.keyUp("w")
 
 def return_to_board(): 
     reset_char()

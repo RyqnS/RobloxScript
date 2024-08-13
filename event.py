@@ -175,12 +175,8 @@ def make_pizza(): #assumes in front of board
     time.sleep(0.5)
     pygui.keyUp("s")
     time.sleep(1)
-    while True:
-        try:
-            button11location = pygui.locateCenterOnScreen('./Images/leftPizzaria.png',confidence = .2)
-            break
-        except:
-            continue
+    while not task_done():
+        continue
     time.sleep(0.1)
     pygui.press("q")
     time.sleep(0.1)

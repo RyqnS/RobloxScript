@@ -7,6 +7,13 @@ def train_clicked():
         return True
     except:
         return False
+    
+def mouse_on_board():
+    try:
+        pygui.locateCenterOnScreen('./Images/text.png',confidence = .8)
+        return True
+    except:
+        return False
 
 def yes_no():
     try:

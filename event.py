@@ -6,6 +6,7 @@ import re
 from Util.checkers import *
 from Util.moveInstructions import *
 
+houseNum = 0
 
 #join event world, zoom out, and press Q. setup
 
@@ -20,6 +21,7 @@ def open_board(): #assumes character in front of board
     pygui.click(1175,320)
     while not board_opened():
         if board_opened(): break
+       
 
 def get_tasks(): #assumes board is open
     im1 = pygui.screenshot(region=(273,209,310,40))
@@ -101,15 +103,18 @@ def make_pizza(): #assumes in front of board
     time.sleep(0.5)
     pygui.keyUp("a")
     time.sleep(1)
-    while True:
-        try:
-            button11location = pygui.locateCenterOnScreen('./Images/enteredPizzaria.png',confidence = .5)
-            break
-        except:
-            continue
+    t_end = time.time() + 5
+    while not entered_pizzaria():
+        if time.time() > t_end:
+            reset_char()
+            time.sleep(0.5)
+            go_to_board()
+            time.sleep(0.5)
+            make_pizza()
+            return
     time.sleep(0.1)
     pygui.keyDown("w")
-    time.sleep(2)
+    time.sleep(2.5)
     pygui.keyDown("a")
     time.sleep(1)
     pygui.keyUp("w")
@@ -119,15 +124,25 @@ def make_pizza(): #assumes in front of board
         if chef2_clicked():
             break
         else:
-            pygui.click(675+10*i,490)
+            pygui.click(675+40*i,490)
             if chef2_clicked(): break
-            pygui.click(675-10*i,490)
+            pygui.click(675-40*i,490)
             if chef2_clicked(): break
             pygui.click(675,490+10*i)
             if chef2_clicked(): break
             pygui.click(675,490-10*i)
             if chef2_clicked(): break
             i+=1
+            if i > 6:
+                reset_char()
+                time.sleep(0.5)
+                pygui.keyDown("w")
+                time.sleep(2.5)
+                pygui.keyDown("a")
+                time.sleep(1)
+                pygui.keyUp("w")
+                pygui.keyUp("a")
+                i = 0
     time.sleep(0.5)
     pygui.click(1170,320) 
     time.sleep(1.25)
@@ -204,6 +219,11 @@ def pizza_delivery(): #assumes in front of board
         time.sleep(1)
         if chef_clicked(): break
         i+=1
+        if i > 5:
+            reset_char()
+            go_to_board()
+            pizza_delivery()
+            return
     time.sleep(.5)
     pygui.click(1170,390)
     time.sleep(1)
@@ -231,6 +251,9 @@ def pizza_delivery(): #assumes in front of board
         x = re.findall(r'\d+', text1)
         pygui.click(420-35*i,480+20*i)
         time.sleep(0.5)
+    if x == []:
+        reset_camera()
+        return
     houseNum = int(x[-1])
     pygui.click(1170,390)
     time.sleep(1)
@@ -333,7 +356,10 @@ if __name__ == "__main__":
         go_to_board()
         do_task()
         time.sleep(0.3)
-        reset_camera()
+        if houseNum == 13:
+            reset_char()
+        else:
+            reset_camera()
     # reset_camera()
     # go_to_board()
     # do_task()

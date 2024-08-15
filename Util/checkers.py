@@ -1,5 +1,11 @@
 import pyautogui as pygui
 
+def entered_pizzaria():
+    try:
+        pygui.locateCenterOnScreen('./Images/enteredPizzaria.png',confidence = .5)
+        return True
+    except:
+        return False
 
 def train_clicked():
     try:

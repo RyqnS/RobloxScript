@@ -124,13 +124,13 @@ def make_pizza(): #assumes in front of board
         if chef2_clicked():
             break
         else:
-            pygui.click(675+40*i,490)
+            pygui.click(625+40*i,490)
             if chef2_clicked(): break
-            pygui.click(675-40*i,490)
+            pygui.click(625-40*i,490)
             if chef2_clicked(): break
-            pygui.click(675,490+10*i)
+            pygui.click(625,490+10*i)
             if chef2_clicked(): break
-            pygui.click(675,490-10*i)
+            pygui.click(625,490-10*i)
             if chef2_clicked(): break
             i+=1
             if i > 6:
@@ -288,13 +288,12 @@ def pizza_delivery(): #assumes in front of board
             i = 0
     time.sleep(0.5)
     pygui.click(1170,390) 
-    time.sleep(1)
+    time.sleep(0.5)
+    while not house_clicked():
+        continue
     while not task_done():
         pygui.click((1170,390))
         time.sleep(0.5)
-    time.sleep(0.4)
-    pygui.click(1170,390)
-    time.sleep(0.1)
     pygui.keyUp("fn")
 
 

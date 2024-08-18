@@ -6,6 +6,14 @@ def entered_pizzaria():
         return True
     except:
         return False
+    
+def reset_screen():
+    try:
+        pygui.locateCenterOnScreen('./Images/resetScreen.png',confidence = .5)
+        return True
+    except:
+        return False
+
 
 def train_clicked():
     try:

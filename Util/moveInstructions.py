@@ -140,12 +140,6 @@ def turn_quarter_right():
 
 def reset_camera():
     reset_char()
-    if reset_screen():
-        pygui.press('esc')
-        time.sleep(0.5)
-        pygui.click((1170,390))
-        time.sleep(0.1)
-        reset_char()
     time.sleep(1)
     pygui.moveTo(100, 100)
     pygui.keyDown("q")

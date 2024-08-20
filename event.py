@@ -289,7 +289,10 @@ def pizza_delivery(): #assumes in front of board
     time.sleep(0.5)
     pygui.click(1170,390) 
     time.sleep(0.5)
+    t_end = time.time() + 2
     while not house_clicked():
+        if time.time() > t_end:
+            break
         continue
     while not task_done():
         pygui.click((1170,390))

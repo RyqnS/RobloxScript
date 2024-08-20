@@ -67,7 +67,7 @@ def chef_clicked():
     
 def chef2_clicked():
     try:
-        pygui.locateCenterOnScreen('./Images/chef2Clicked.png',confidence = .4)
+        pygui.locateCenterOnScreen('./Images/chef2Clicked.png',confidence = .8)
         return True
     except:
         return False

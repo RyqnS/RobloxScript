@@ -1,9 +1,30 @@
 import pyautogui as pygui
 
+def entered_pizzaria():
+    try:
+        pygui.locateCenterOnScreen('./Images/enteredPizzaria.png',confidence = .5)
+        return True
+    except:
+        return False
+    
+def reset_screen():
+    try:
+        pygui.locateCenterOnScreen('./Images/resetScreen.png',confidence = .5)
+        return True
+    except:
+        return False
+
 
 def train_clicked():
     try:
         pygui.locateCenterOnScreen('./Images/trainClicked.png',confidence = .7)
+        return True
+    except:
+        return False
+    
+def mouse_on_board():
+    try:
+        pygui.locateCenterOnScreen('./Images/text.png',confidence = .8)
         return True
     except:
         return False
@@ -46,7 +67,7 @@ def chef_clicked():
     
 def chef2_clicked():
     try:
-        pygui.locateCenterOnScreen('./Images/chef2Clicked.png',confidence = .4)
+        pygui.locateCenterOnScreen('./Images/chef2Clicked.png',confidence = .8)
         return True
     except:
         return False
